@@ -20,3 +20,6 @@ $\mathbf{x}$ as the following product of condititional distributions, where
 $x_i$ is a single pixel:
 
 $$p(x) = \prod_{i = 1}^{n^2} p(x_i | x_1, \cdots, x_{i-1}).$$
+
+As you can see, each pixel only depends on the previously-generated pixels,
+built on a raster-scan left-to-right, up-to-down order.
