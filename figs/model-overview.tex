@@ -1,0 +1,31 @@
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\begin{document}
+
+\pagestyle{empty}
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex]
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm, minimum height=2em]
+
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+	\node [block] (present) {present};
+    \node [block, right of=present, node distance = 4cm] (present-rep) {present's representation};
+    \node [block, right of=present-rep, node distance = 4cm] (present-recon) {present's reconstruction};
+	\node [block, below of=present-rep] (future-rep) {future's representation};
+    \node [block, right of=future-rep, node distance = 4cm] (future-recon) {future's reconstruction};
+    % Draw edges
+	\path [line] (present) -- node {encoder} (present-rep);
+	\path [line] (present-rep) -- node {decoder} (present-recon);
+	\path [line] (present-rep) -- node {PixelCNN} (future-rep);
+	\path [line] (future-rep) -- node {decoder} (future-recon);
+\end{tikzpicture}
+
+\end{document}
