@@ -22,15 +22,12 @@ jupyter==1.0.0
 jupyter-client==5.2.3
 jupyter-console==5.2.0
 jupyter-core==4.4.0
-jupyterlab==0.34.11
-jupyterlab-launcher==0.13.1
 Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
 kiwisolver==1.0.1
 livelossplot==0.2.0
 Markdown==3.0.1
 MarkupSafe==1.0
-matplotlib==3.0.0
 mistune==0.8.3
 nbconvert==5.4.0
 nbformat==4.4.0
@@ -59,8 +56,6 @@ tensorflow==1.11.0
 termcolor==1.1.0
 terminado==0.8.1
 testpath==0.3.1
-torch==0.4.1
-torchvision==0.2.1
 tornado==5.1.1
 traitlets==4.3.2
 wcwidth==0.1.7
