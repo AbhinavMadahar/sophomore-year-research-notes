@@ -23,6 +23,8 @@ As you can see, each pixel only depends on the previously-generated pixels, buil
 
 ## Neural Discrete Representation Learning
 
+### Section 3.1
+
 I do a sentence-by-sentence break-down of section 3.1.
 
 > We define a latent embedding space $e \in \mathbb{R}^{D \times K}$ where $K$
@@ -118,4 +120,15 @@ The KL divergence $D_{\mathrm{KL}}(P || Q)$ is defined by
 $$
 D_{\mathrm{KL}}(P || Q) = - \sum_{x \in \mathcal{X}} P(x) \log \frac{Q(x)}{P(x)}.
 $$
-We see that, since $P(k) = 1$ and $P(j) = 0$ for $j \neq k$, the KL divegence becomes
+I don't understand what defining a simple uniform prior over $z$ means, and I do not understand why we obtain a KL divergence constant and equal to $\log K$.
+
+> The representation $z_e(x)$ is passed through the discretisation bottleneck followed by mapping onto the nearest element of embedding $e$ as given in equations 1 and 2.
+
+This is just a restatement of equation 2.
+
+
+### Section 3.2
+
+> Note that there is no real gradient defined for equation 2.
+
+> However we approximate the gradient similar to the straight-through estimator and just copy gradients from decoder input $z_q(x)$ to encoder output $z_e(x)$.
